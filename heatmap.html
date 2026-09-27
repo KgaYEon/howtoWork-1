@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Heatmap | How To Work</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="/src/css/reset.css">
+  <link rel="stylesheet" href="/src/css/style.css">
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <a class="site-header__link" href="/" aria-label="How To Work 홈">
+      <img class="site-header__logo" src="/images/how-to-work.png" alt="How To Work" width="923" height="185" draggable="false">
+    </a>
+  </header>
+
+  <div class="layout">
+
+    <!-- ===== Sidebar ===== -->
+    <nav class="sidebar" aria-label="페이지 목록">
+      <ul class="sidebar__list">
+          <li><a class="sidebar__link" href="/index.html">Affinity Diagram</a></li>
+          <li><a class="sidebar__link" href="/claude-code.html">Claude Code</a></li>
+          <li><a class="sidebar__link is-active" href="/heatmap.html" aria-current="page">Heatmap</a></li>
+          <li><a class="sidebar__link" href="/my-approach.html">My Approach</a></li>
+      </ul>
+    </nav>
+
+    <!-- ===== Content ===== -->
+    <main class="content">
+
+      <div class="page-title">
+        <h1 class="page-title__main">Heatmap_</h1>
+        <p class="page-title__sub">영상만으로 사용자의 움직임을 읽는 방법</p>
+      </div>
+      <p class="page-intro">
+        사용성 테스트를 녹화한 영상은 항상 있었지만, 히트맵 도구로 수집한 클릭 데이터는 없었습니다.<br>
+        그래서 영상에서 프레임별 이미지를 추출하고, 커서 위치를 직접 찍어 내는 도구를 만들었습니다.
+      </p>
+
+      <section class="section">
+        <div class="section__head">
+          <span class="badge">단계 1</span>
+          <h2 class="section__title">영상에서 프레임 추출하기</h2>
+        </div>
+        <p class="section__lead">녹화 영상을 일정한 간격으로 잘라 이미지로 저장합니다.</p>
+        <p class="section__desc">
+          프레임 추출 도구도 Claude Code를 활용해 Python과 OpenCV로 직접 만들었습니다.<br>
+          원하는 구간과 간격을 지정하면 그 범위의 프레임만 뽑아낼 수 있고, 페이지가 바뀌는 지점을 기준으로 구간을 나누면 이후 화면별로 사용자의 움직임을 따로 볼 수 있습니다.
+        </p>
+      </section>
+
+      <section class="section">
+        <div class="section__head">
+          <span class="badge">단계 2</span>
+          <h2 class="section__title">프레임 위에 이동 경로 찍기</h2>
+        </div>
+        <p class="section__lead">추출한 프레임을 브라우저 도구에 올리고, 한 장씩 넘기며 커서 위치를 도트로 찍습니다.</p>
+        <p class="section__desc">
+          찍은 좌표를 바탕으로 히트맵과 이동 경로가 함께 그려집니다.<br>
+          여러 번 찍힌 영역일수록 색이 겹쳐 진해지도록 해, 어디에 오래 머물렀는지, 어디서 머뭇거리다 이동했는지까지 한 화면에서 확인할 수 있습니다.
+        </p>
+
+        <div class="media-grid media-grid--wide">
+          <div class="media-grid__item"><img src="/images/heatmap/heatmap-01.png" alt="설문 편집 화면 위에 그린 커서 히트맵과 이동 경로" loading="lazy" draggable="false"></div>
+          <div class="media-grid__item"><img src="/images/heatmap/heatmap-02.png" alt="게임 아카이브 메인 화면 위에 그린 커서 히트맵" loading="lazy" draggable="false"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section__title" style="margin-bottom: 18px;">왜 전문 도구를 쓰지 않았나요</h2>
+        <p class="closing-text">
+          Hotjar나 Maze 같은 히트맵 도구는 분석할 사이트에 추적 코드를 미리 설치해야 데이터를 모을 수 있습니다.<br>
+          제가 테스트한 화면은 직접 운영하지 않는 사이트였기 때문에 코드를 설치할 수 없었고, 이미 녹화가 끝난 영상은 이런 도구로 다시 분석할 수도 없었습니다.<br>
+          그래서 이미 가진 녹화 영상에서 직접 데이터를 꺼내는 방법을 택했습니다.
+        </p>
+      </section>
+
+      <section class="section">
+        <h2 class="section__title" style="margin-bottom: 18px;">앞으로의 목표</h2>
+        <p class="closing-text">
+          지금은 커서 위치를 직접 찍고 있어, 영상이 길어질수록 시간이 많이 듭니다.<br>
+          앞으로는 YOLO 모델에 커서를 학습시켜, 프레임에서 커서를 자동으로 인식하고 위치를 찍는 단계까지 만드는 것이 목표입니다.
+        </p>
+      </section>
+    </main>
+
+  </div>
+
+</body>
+</html>

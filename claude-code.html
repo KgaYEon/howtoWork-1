@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code | How To Work</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="/src/css/reset.css">
+  <link rel="stylesheet" href="/src/css/style.css">
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <a class="site-header__link" href="/" aria-label="How To Work 홈">
+      <img class="site-header__logo" src="/images/how-to-work.png" alt="How To Work" width="923" height="185" draggable="false">
+    </a>
+  </header>
+
+  <div class="layout">
+
+    <!-- ===== Sidebar ===== -->
+    <nav class="sidebar" aria-label="페이지 목록">
+      <ul class="sidebar__list">
+          <li><a class="sidebar__link" href="/index.html">Affinity Diagram</a></li>
+          <li><a class="sidebar__link is-active" href="/claude-code.html" aria-current="page">Claude Code</a></li>
+          <li><a class="sidebar__link" href="/heatmap.html">Heatmap</a></li>
+          <li><a class="sidebar__link" href="/my-approach.html">My Approach</a></li>
+      </ul>
+    </nav>
+
+    <!-- ===== Content ===== -->
+    <main class="content">
+
+      <div class="page-title">
+        <h1 class="page-title__main">Claude Code_</h1>
+        <p class="page-title__sub">디자인한 화면에 기능을 얹어 보는 방법</p>
+      </div>
+      <p class="page-intro">
+        평소에도 다양한 곳에서 AI를 활용하지만, 요즘은 특히 Claude Code를 유용하게 쓰려고 노력하고 있습니다.<br>
+        그중에서도 디자인한 화면에 기능을 얹어 실제로 동작하는 모습을 확인하는 데 활용합니다.<br>
+        더미 데이터처럼 피그마 프로토타입으로는 구현할 수 없는 부분까지 확인할 수 있어 효과적입니다.
+      </p>
+
+      <section class="section">
+        <div class="section__head">
+          <span class="badge">단계 1</span>
+          <h2 class="section__title">작은 디자인 시스템 만들기</h2>
+        </div>
+        <p class="section__lead">먼저 화면에 쓰일 작은 디자인 시스템을 구축합니다.</p>
+        <p class="section__desc">이때 가장 중요한 건 네이밍입니다. 이름은 영어로, 직관적으로 짓고 하나의 규칙을 정해 균일하게 지킵니다.<br>
+          AI가 정확하게 알아들을 수 있고, 저 스스로도 "이게 뭐였지?" 하고 헤매는 일이 없도록 하기 위해서입니다.</p>
+
+        <div class="media-grid media-grid--wide">
+          <div class="media-grid__item"><img src="/images/claude-code/step1-foundation.png" alt="디자인 시스템 파운데이션 — 컬러, 타이포그래피, 스페이싱" loading="lazy" draggable="false"></div>
+          <div class="media-grid__item"><img src="/images/claude-code/step1-components.png" alt="디자인 시스템 컴포넌트 — 버튼, 칩" loading="lazy" draggable="false"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__head">
+          <span class="badge">단계 2</span>
+          <h2 class="section__title">피그마 MCP로 연결하기</h2>
+        </div>
+        <p class="section__lead">피그마 MCP를 활용해 Claude Code와 피그마를 연결합니다.</p>
+        <p class="section__desc">연결 방식은 데스크톱과 원격 중에서 고를 수 있는데, 저는 활용할 수 있는 기능이 더 자유롭게 열려 있는 원격 방식을 사용합니다.</p>
+      </section>
+
+      <section class="section">
+        <div class="section__head">
+          <span class="badge">단계 3</span>
+          <h2 class="section__title">디자인 시스템 이해시키기</h2>
+        </div>
+        <p class="section__lead">프롬프트로 Claude Code에게 디자인 시스템과 네이밍 규칙을 익히게 합니다.</p>
+        <p class="section__desc">익히기가 끝나면 그 내용을 아티팩트로 정리해, 제대로 이해했는지 눈으로 확인합니다.</p>
+
+        <div class="media-grid media-grid--wide">
+          <div class="media-grid__item"><img src="/images/claude-code/step3-color-tokens.png" alt="Claude Code가 정리한 컬러 토큰 확인 페이지" loading="lazy" draggable="false"></div>
+          <div class="media-grid__item"><img src="/images/claude-code/step3-icon-tokens.png" alt="Claude Code가 정리한 아이콘 토큰 확인 페이지" loading="lazy" draggable="false"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section__head">
+          <span class="badge">단계 4</span>
+          <h2 class="section__title">화면 퍼블리싱 후 기능 얹기</h2>
+        </div>
+        <p class="section__lead">화면을 퍼블리싱하고, 레이아웃이 모두 맞으면 기능을 얹습니다.</p>
+        <p class="section__desc">기능을 넣을 때는 주로 Vite + React 환경을 사용합니다. 이렇게 하면 간단하게 작동하는 서비스를 빠르게 구현해 확인할 수 있습니다.</p>
+
+        <div class="media-grid media-grid--wide">
+          <div class="media-grid__item"><img src="/images/claude-code/step4-home.png" alt="기능을 얹어 구현한 홈 화면" loading="lazy" draggable="false"></div>
+          <div class="media-grid__item"><img src="/images/claude-code/step4-notices.png" alt="기능을 얹어 구현한 공지사항 화면" loading="lazy" draggable="false"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section__title" style="margin-bottom: 22px;">그래서 저는 이렇게 사용합니다</h2>
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th scope="col">확인하고 싶은 것</th>
+              <th scope="col">방법</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>화면 흐름과 인터랙션</td>
+              <td>Figma Prototype</td>
+            </tr>
+            <tr>
+              <td>더미 데이터, 실제 기능 동작</td>
+              <td>Claude Code</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+  </div>
+
+</body>
+</html>

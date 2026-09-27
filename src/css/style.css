@@ -1,0 +1,394 @@
+/* =========================================================
+   HOW TO WORK — 공통 스타일
+   색상·크기는 :root 변수에서 한 번에 바꿀 수 있어요.
+   ========================================================= */
+
+:root {
+  /* Color */
+  --color-bg: #222222;
+  --color-header-bg: #e3e2e0;
+  --color-text: #ffffff;
+  --color-text-sub: #c9c9c9;
+  --color-text-muted: #a8a8a8;
+  --color-nav-active: #3a3a3a;
+  --color-accent: #ff6b35;
+  --color-accent-bg: #ffd9c7;
+  --color-placeholder: #d9d9d9;
+  --color-border: #d9d9d9;
+  --color-table-head: #e8e8e8;
+
+
+  /* Layout */
+  --header-height: 195px;
+  --sidebar-width: 183px;
+  --content-max: 856px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+
+  /* Font */
+  --font-base: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+}
+
+body {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  font-family: var(--font-base);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* ===== Header (HOW TO WORK 로고 이미지) ===== */
+.site-header {
+  height: var(--header-height);
+  background: var(--color-header-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.site-header__link {
+  display: block;
+  width: min(840px, 90%);
+}
+
+.site-header__logo {
+  width: 100%;
+  height: auto;
+}
+
+/* 이미지 드래그·선택 방지 */
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* ===== Layout ===== */
+.layout {
+  display: flex;
+  gap: 142px;
+  padding: 57px 40px 160px 43px;
+  min-height: calc(100vh - var(--header-height));
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  flex: 0 0 var(--sidebar-width);
+}
+
+.sidebar__list {
+  position: sticky;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar__link {
+  display: block;
+  padding: 18px 28px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-sub);
+  border-radius: var(--radius-md);
+  transition: background 0.15s, color 0.15s;
+}
+
+.sidebar__link:hover {
+  color: var(--color-text);
+}
+
+.sidebar__link.is-active {
+  background: var(--color-nav-active);
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+/* ===== Content ===== */
+.content {
+  flex: 1;
+  min-width: 0;
+  max-width: var(--content-max);
+}
+
+.page-title {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  margin-bottom: 20px;
+}
+
+.page-title__main {
+  font-size: 44px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.page-title__sub {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.page-intro {
+  font-size: 17px;
+  color: var(--color-text-sub);
+  line-height: 1.6;
+}
+
+/* ===== Section ===== */
+.section {
+  margin-top: 56px;
+}
+
+.section__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 5px 13px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-accent);
+  background: var(--color-accent-bg);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.section__title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.section__lead {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.section__desc {
+  font-size: 14px;
+  color: var(--color-text-sub);
+  line-height: 1.6;
+}
+
+/* ===== Media ===== */
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 21px;
+  margin-top: 20px;
+}
+
+.media-grid__item,
+.media-wide {
+  background: var(--color-placeholder);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.media-grid__item {
+  aspect-ratio: 271 / 120;
+}
+
+/* 2장씩 들어가는 넓은 비율 (Claude Code 페이지) */
+.media-grid--wide .media-grid__item {
+  aspect-ratio: 1095 / 533;
+}
+
+.media-wide {
+  aspect-ratio: 856 / 358;
+  margin-top: 23px;
+}
+
+/* 이미지·영상을 넣으면 칸에 꽉 차게 */
+.media-grid__item > img,
+.media-grid__item > video,
+.media-wide > img,
+.media-wide > video,
+.media-wide > iframe {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 0;
+}
+
+/* ===== Table ===== */
+.summary-table {
+  width: 100%;
+  max-width: 540px;
+  font-size: 13px;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  border-collapse: separate;
+  overflow: hidden;
+}
+
+.summary-table th,
+.summary-table td {
+  padding: 13px 14px;
+  text-align: left;
+}
+
+.summary-table th {
+  font-weight: 600;
+  font-size: 12px;
+  color: #222;
+  background: var(--color-table-head);
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.summary-table td {
+  border-top: 1px solid var(--color-border);
+}
+
+.summary-table th + th,
+.summary-table td + td {
+  border-left: 1px solid var(--color-border);
+}
+
+.summary-table th:first-child,
+.summary-table td:first-child {
+  width: 42%;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1100px) {
+  .layout {
+    gap: 56px;
+  }
+}
+
+@media (max-width: 800px) {
+  :root {
+    --header-height: 120px;
+  }
+
+  .layout {
+    flex-direction: column;
+    gap: 32px;
+    padding: 24px 16px 96px;
+  }
+
+  .sidebar {
+    flex: none;
+  }
+
+  .sidebar__list {
+    position: static;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 4px;
+  }
+
+  .sidebar__link {
+    padding: 10px 14px;
+    white-space: nowrap;
+  }
+
+  .page-title__main {
+    font-size: 32px;
+  }
+
+  .page-title__sub {
+    font-size: 16px;
+  }
+
+  .page-intro {
+    font-size: 15px;
+  }
+
+  .section__title {
+    font-size: 20px;
+  }
+
+  .section__lead {
+    font-size: 15px;
+  }
+
+  .media-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* ===== Flow (My Approach 원칙 4) ===== */
+.flow {
+  margin-top: 24px;
+}
+
+.flow__label {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  margin: 0 0 10px;
+}
+
+.flow__label + .flow__row + .flow__label,
+.flow__row + .flow__label {
+  margin-top: 22px;
+}
+
+.flow__label--accent {
+  color: var(--color-accent);
+}
+
+.flow__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+}
+
+.flow__step {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 92px;
+  padding: 10px 22px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text);
+  background: #4a4a4a;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.flow__step--accent {
+  background: var(--color-accent);
+}
+
+.flow__arrow {
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+/* ===== Closing text ===== */
+.closing-text {
+  font-size: 15px;
+  color: var(--color-text-sub);
+  line-height: 1.75;
+}
+
+@media (max-width: 800px) {
+  .flow__step {
+    min-width: 0;
+    padding: 9px 14px;
+    font-size: 12px;
+  }
+
+  .flow__row {
+    gap: 8px 10px;
+  }
+
+  .closing-text {
+    font-size: 14px;
+  }
+}

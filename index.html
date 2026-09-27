@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Affinity Diagram | How To Work</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+  <link rel="stylesheet" href="/src/css/reset.css">
+  <link rel="stylesheet" href="/src/css/style.css">
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header class="site-header">
+    <a class="site-header__link" href="/" aria-label="How To Work 홈">
+      <img class="site-header__logo" src="/images/how-to-work.png" alt="How To Work" width="923" height="185" draggable="false">
+    </a>
+  </header>
+
+  <div class="layout">
+
+    <!-- ===== Sidebar ===== -->
+    <nav class="sidebar" aria-label="페이지 목록">
+      <ul class="sidebar__list">
+          <li><a class="sidebar__link is-active" href="/index.html" aria-current="page">Affinity Diagram</a></li>
+          <li><a class="sidebar__link" href="/claude-code.html">Claude Code</a></li>
+          <li><a class="sidebar__link" href="/heatmap.html">Heatmap</a></li>
+          <li><a class="sidebar__link" href="/my-approach.html">My Approach</a></li>
+      </ul>
+    </nav>
+
+    <!-- ===== Content ===== -->
+    <main class="content">
+
+      <div class="page-title">
+        <h1 class="page-title__main">Affinity Diagram_</h1>
+        <p class="page-title__sub">흩어진 아이디어를 정리하는 방법</p>
+      </div>
+      <p class="page-intro">
+        흩뿌려진 아이디어를 한데 모아 정리해야 할 때, 저는 어피니티 다이어그램(Affinity Diagram)을 자주 씁니다.<br>
+        상황에 따라 두 가지 방법을 골라 씁니다.
+      </p>
+
+      <!-- 방법 1 -->
+      <section class="section">
+        <div class="section__head">
+          <span class="badge">방법 1</span>
+          <h2 class="section__title">FigJam으로 빠르게</h2>
+        </div>
+        <p class="section__lead">원격으로 진행하거나 빠르게 정리해야 할 때 씁니다.</p>
+        <p class="section__desc">내용을 복사하거나 바로 타이핑할 수 있어 정리가 빠르고, FigJam에 내장된 AI로 포스트잇을 쉽게 그룹으로 나눌 수 있어 종종 활용합니다.</p>
+
+        <!-- 이미지 넣는 법: 빈 div 안에 <img src="/images/affinity-diagram/figjam-01.jpg" alt="설명"> -->
+        <div class="media-grid">
+          <div class="media-grid__item"><img src="/images/affinity-diagram/figjam-01.png" alt="FigJam으로 정리한 어피니티 다이어그램 1" loading="lazy" draggable="false"></div>
+          <div class="media-grid__item"><img src="/images/affinity-diagram/figjam-02.png" alt="FigJam으로 정리한 어피니티 다이어그램 2" loading="lazy" draggable="false"></div>
+          <div class="media-grid__item"><img src="/images/affinity-diagram/figjam-03.png" alt="FigJam으로 정리한 어피니티 다이어그램 3" loading="lazy" draggable="false"></div>
+        </div>
+      </section>
+
+      <!-- 방법 2 -->
+      <section class="section">
+        <div class="section__head">
+          <span class="badge">방법 2</span>
+          <h2 class="section__title">화이트보드에 손으로</h2>
+        </div>
+        <p class="section__lead">직접 펜으로 쓰고, 포스트잇을 붙였다 떼면서 아이디어를 나열하고 정리하는 방법입니다. FigJam보다 이 방법을 더 선호합니다.</p>
+        <p class="section__desc">
+          손으로 쓰고 옮기는 과정에서 미처 생각하지 못한 관점이 떠오르고, 머릿속으로는 잘 정리되지 않던 부분도 직접 몸을 움직이다 보면 하나씩 정리됩니다.<br>
+          무엇보다 그 과정이 재미있고 오래 기억에 남아, 이후 프로젝트 전반에 좋은 영향을 줍니다.
+        </p>
+
+        <div class="media-grid">
+          <div class="media-grid__item"><img src="/images/affinity-diagram/board-01.png" alt="화이트보드에 정리한 어피니티 다이어그램 1" loading="lazy" draggable="false"></div>
+          <div class="media-grid__item"><img src="/images/affinity-diagram/board-02.png" alt="화이트보드에 정리한 어피니티 다이어그램 2" loading="lazy" draggable="false"></div>
+          <div class="media-grid__item"><img src="/images/affinity-diagram/board-03.png" alt="화이트보드에 정리한 어피니티 다이어그램 3" loading="lazy" draggable="false"></div>
+        </div>
+
+        <!-- 영상 넣는 법: 빈 div 안에 <video src="/videos/whiteboard-01.mp4" controls muted playsinline></video> -->
+        <div class="media-wide"></div>
+        <div class="media-wide"></div>
+      </section>
+
+      <!-- 정리 표 -->
+      <section class="section">
+        <h2 class="section__title" style="margin-bottom: 22px;">그래서 저는 이렇게 사용합니다</h2>
+        <table class="summary-table">
+          <thead>
+            <tr>
+              <th scope="col">상황</th>
+              <th scope="col">방법</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>빠르고 간결한 정리가 필요할 때</td>
+              <td>방법 1. FigJam</td>
+            </tr>
+            <tr>
+              <td>시간을 들여 깊이 탐구하고 싶을 때</td>
+              <td>방법 2. 화이트보드 &amp; 포스트잇</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+
+  </div>
+
+</body>
+</html>
